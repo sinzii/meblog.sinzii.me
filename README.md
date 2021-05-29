@@ -1,4 +1,5 @@
 # [meblog.sinzii.me](https://meblog.sinzii.me)
 
-Powered by meblog static site generator
-Hosted by Github Pages
+Powered by __meblog__ static site generator
+
+Hosted by __Github Pages__
