@@ -1,0 +1,17 @@
+extends ../layouts/main
+
+block prepend head
+    - var title = 'Writings';
+
+block append head
+    - var description = 'Where my thoughts wander...';
+    meta(property='og:description' content=description)
+    meta(property='og:url' content=rootUrl('/writings.html'))
+    meta(property='description' content=description)
+
+block content
+    +header
+    +personal-board-small
+    each post in posts
+        +post-summary(post)
+

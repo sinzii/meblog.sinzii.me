@@ -1,0 +1,9 @@
+{
+  "name": "meblog.sinzii.me",
+  "version": "1.0.0",
+  "description": "Website for meblog static site generator",
+  "scripts": {
+  },
+  "author": "Thang X. Vu (@sinzii)",
+  "license": "MIT"
+}
