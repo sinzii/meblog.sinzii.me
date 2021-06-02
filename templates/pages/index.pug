@@ -21,6 +21,7 @@ block content
 
     h3 Latest writings
     ul.listing
+        - var latestPosts = posts.slice(0, 5)
         each post in latestPosts
             li.listing__item
                 span.meta-color=`${formatDate(post.publishedAt)} - `
