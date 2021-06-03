@@ -1,4 +1,4 @@
-extends ../layouts/main
+extends ../_layouts/main
 
 block prepend head
     - var title = siteDescription
@@ -14,23 +14,28 @@ block content
     h3 Have a quick taste
     pre
         code
-            | git clone https://github.com/sinzii/meblog.git
-            | npm install
-            | npm run dev:sample -- --numberOfPosts=50
-            | npm run dev:serve
+            | npm install -g meblog // use --unsafe-perm if facing node-gyp error
+            |
+            | meblog init your-site && cd your-site
+            |
+            | meblog sample --number-of-posts=20
+            |
+            | meblog serve
 
     h3 Latest writings
     ul.listing
-        - var latestPosts = posts.slice(0, 5)
+        - var latestPosts = posts.slice(0, numberOfLatestPosts)
         each post in latestPosts
             li.listing__item
-                span.meta-color=`${formatDate(post.publishedAt)} - `
-                a(href=postUrl(post))=post.title
+                a(href=post.url)=post.title
 
     h3 Websites built with&nbsp;
         span.p-color meblog
     ul.listing
-        li.listing__item
-            a(href='https://sinzii.me' target='_blank') https://sinzii.me - Thang X. Vu (@sinzii)
+        each website in websitesBuiltWithMeblog
+            li.listing__item
+                a(href=website.url target='_blank')=website.url
+                span=` - ${website.text}`
+
 
 

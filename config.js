@@ -2,7 +2,7 @@ module.exports = {
     baseUrl: 'https://meblog.sinzii.me',
     baseContext: '',
     siteName: 'meblog',
-    siteDescription: 'A simple static site generator',
+    siteDescription: 'A simple blog engine for personal blogging',
     dateTimeFormat: 'DD/MM/YYYY - HH:mm',
     dateFormat: 'DD/MM/YYYY',
     postUrlStyle: 'SLUG',
@@ -11,5 +11,15 @@ module.exports = {
         nickname: '@meblog',
         github: 'https://github.com/sinzii/meblog'
     },
-    latestPosts: 5
+    websitesBuiltWithMeblog: [
+        {
+            url: 'https://meblog.sinzii.me',
+            text: 'meblog website',
+        },
+        {
+            url: 'https://sinzii.me',
+            text: 'Thang X. Vu (@sinzii)',
+        },
+    ],
+    numberOfLatestPosts: 5
 }

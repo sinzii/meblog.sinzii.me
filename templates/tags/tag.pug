@@ -1,4 +1,4 @@
-extends ../layouts/main
+extends ../_layouts/main
 
 block prepend head
     - var title = `#${tag}`
@@ -6,7 +6,7 @@ block prepend head
 block append head
     - var description = `Writings tagged as #${tag}`
     meta(property='og:description' content=description)
-    meta(property='og:url' content=rootUrl(`/tags/${tag}.html`))
+    meta(property='og:url' content=tagRootUrl(tag))
     meta(property='description' content=description)
 
 block content
@@ -15,6 +15,6 @@ block content
     h1.mt-0
         span Tagged as&nbsp;
         span.p-color=`#${tag}`
-    each post in posts
+    each post in postsByTag
         +post-summary(post)
 

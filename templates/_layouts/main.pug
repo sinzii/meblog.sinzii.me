@@ -1,0 +1,25 @@
+include ../_includes/variables
+include ../_mixins/index
+
+doctype html
+html(lang='en')
+    head
+        block head
+            +common-meta-tags
+
+            - var displayTitle = title + (title ? ' - ' : '') + siteName
+            title=displayTitle
+
+            +favicon-and-appicons
+
+            link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/github.min.css' integrity='sha512-7QTQ5Qsc/IL1k8UU2bkNFjpKTfwnvGuPYE6fzm6yeneWTEGiA3zspgjcTsSgln9m0cn3MgyE7EnDNkF1bB/uCw==' crossorigin='anonymous' referrerpolicy='no-referrer')
+            link(rel='stylesheet' href=url('/main.css'))
+
+            +common-og-tags(displayTitle)
+            +google-analytics('G-0MM8BLGPE0')
+    body
+        +fork-me-on-github
+        div.myblog.main-content
+            main.page-content(class=`page-${templateName}`)
+                block content
+                +footer
