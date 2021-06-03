@@ -6,6 +6,6 @@
   "author": "Thang X. Vu (@sinzii)",
   "license": "MIT",
   "devDependencies": {
-    "meblog": "^2.0.0"
+    "meblog": "^2.1.0"
   }
 }
