@@ -21,5 +21,10 @@ module.exports = {
             text: 'Thang X. Vu (@sinzii)',
         },
     ],
-    numberOfLatestPosts: 5
+    gettingStartedLinks: [
+        {
+            url: 'https://github.com/sinzii/meblog#table-of-contents',
+            text: 'Documentation'
+        }
+    ]
 }

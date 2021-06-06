@@ -14,17 +14,23 @@ block content
     h3 Have a quick taste
     pre
         code
-            | npm install -g meblog // use --unsafe-perm if facing node-gyp error
+            | npm install --save meblog
             |
-            | meblog init your-site && cd your-site
+            | npx meblog init
             |
-            | meblog sample --number-of-posts=20
+            | npx meblog sample --number-of-posts=20
             |
-            | meblog serve
+            | npx meblog serve
 
-    h3 Latest writings
+    h3 Getting Started
     ul.listing
-        - var latestPosts = posts.slice(0, numberOfLatestPosts)
+        each link in gettingStartedLinks
+            li.listing__item
+                a(href=link.url target='_blank')=link.text
+
+    h3 Sample Content
+    ul.listing
+        - var latestPosts = posts.slice(0, 10)
         each post in latestPosts
             li.listing__item
                 a(href=post.url)=post.title
